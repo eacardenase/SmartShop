@@ -25,3 +25,7 @@ struct AuthenticationController {
         return try await httpClient.load(resource)
     }
 }
+
+extension AuthenticationController {
+    static let development = AuthenticationController(httpClient: .development)
+}
