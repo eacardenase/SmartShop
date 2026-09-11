@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct ErrorResponse: Codable {
-    let message: String?
-}
-
 enum NetworkError: Error {
     case badRequest
     case decodingError(Error)
@@ -38,7 +34,7 @@ extension NetworkError: LocalizedError {
             )
         case .errorResponse(let errorResponse):
             NSLocalizedString(
-                "Error \(errorResponse.message ?? "")",
+                "Error \(errorResponse.message)",
                 comment: "Error Response"
             )
         }
