@@ -14,6 +14,7 @@ struct LoginScreen: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var message: String?
+    @AppStorage("userId") private var userId: Int?
 
     private var isFormValid: Bool {
         !username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -52,13 +53,20 @@ struct LoginScreen: View {
                 password: password
             )
 
-            print("DEBUG: \(response)")
-
-            if response.success {
-                //
-            } else {
+            guard response.success else {
                 message = response.message ?? ""
+
+                return
             }
+
+            print("DEBUG: \(response.token)")
+
+            KeychainStore.set(
+                response.token,
+                forKey: "\(response.userId)_jwt_token"
+            )
+
+            userId = response.userId
         } catch {
             print("DEBUG: \(error)")
             message = error.localizedDescription
