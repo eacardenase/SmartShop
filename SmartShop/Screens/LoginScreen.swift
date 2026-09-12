@@ -44,9 +44,6 @@ struct LoginScreen: View {
             Text(message ?? "")
         }
         .navigationTitle("Login")
-        .navigationDestination(item: $userId) { userId in
-            Text("Hello, \(userId)!")
-        }
     }
 
     private func login() async {

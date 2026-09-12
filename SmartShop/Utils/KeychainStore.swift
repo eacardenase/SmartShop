@@ -50,6 +50,7 @@ struct KeychainStore<T: Codable> {
         return nil
     }
 
+    @discardableResult
     static func delete(_ key: String) -> Bool {
         let query: [CFString: Any] = [
             kSecClass: kSecClassGenericPassword,

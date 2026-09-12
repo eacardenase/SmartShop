@@ -34,11 +34,22 @@ extension AppScreen {
         case .home:
             NavigationStack { Text("Home").navigationTitle("Home") }
         case .products:
-            NavigationStack { Text("Products").navigationTitle("Products") }
+            NavigationStack {
+                Text("Products")
+                    .navigationTitle("Products")
+                    .requiresAuthentication()
+            }
         case .cart:
-            NavigationStack { Text("Cart").navigationTitle("Cart") }
+            NavigationStack {
+                Text("Cart")
+                    .navigationTitle("Cart")
+                    .requiresAuthentication()
+            }
         case .profile:
-            NavigationStack { Text("Profile").navigationTitle("Profile") }
+            NavigationStack {
+                ProfileScreen()
+                    .requiresAuthentication()
+            }
         }
     }
 }
