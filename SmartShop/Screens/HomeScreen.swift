@@ -32,7 +32,9 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .home:
-            NavigationStack { Text("Home").navigationTitle("Home") }
+            NavigationStack {
+                Text("Home").navigationTitle("Home")
+            }
         case .products:
             NavigationStack {
                 Text("Products")
