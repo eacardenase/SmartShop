@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		203AF09D3054CDD700EBE7E4 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 203AF09C3054CDD700EBE7E4 /* JWTDecode */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		203AF073304F95BE00EBE7E4 /* SmartShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203AF09D3054CDD700EBE7E4 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = SmartShop;
 			packageProductDependencies = (
+				203AF09C3054CDD700EBE7E4 /* JWTDecode */,
 			);
 			productName = SmartShop;
 			productReference = 203AF073304F95BE00EBE7E4 /* SmartShop.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 203AF06A304F95BE00EBE7E4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				203AF09B3054CDD700EBE7E4 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 203AF074304F95BE00EBE7E4 /* Products */;
 			projectDirPath = "";
@@ -332,6 +341,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		203AF09B3054CDD700EBE7E4 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		203AF09C3054CDD700EBE7E4 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203AF09B3054CDD700EBE7E4 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 203AF06B304F95BE00EBE7E4 /* Project object */;
 }

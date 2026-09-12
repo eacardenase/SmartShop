@@ -66,7 +66,7 @@ struct LoginScreen: View {
 
             KeychainStore.set(
                 response.token,
-                forKey: "\(response.userId)_jwt_token"
+                forKey: "jwt_token"
             )
 
             userId = response.userId
