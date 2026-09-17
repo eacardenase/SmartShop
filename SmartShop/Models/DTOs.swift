@@ -23,3 +23,32 @@ struct LoginResponse: Codable {
     let username: String
     let token: String
 }
+
+struct Product: Codable, Identifiable {
+    var id: Int?
+    let name: String
+    let description: String
+    let price: Double
+    let photoUrl: URL?
+    let userId: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case description
+        case price
+        case photoUrl = "photo_url"
+        case userId = "user_id"
+    }
+}
+
+extension Product {
+    static var preview: Product = .init(
+        id: 1,
+        name: "Chair",
+        description: "This is an awesome chair",
+        price: 850,
+        photoUrl: URL(string: "http://localhost:8080/uploads/chair-photo.png"),
+        userId: 14
+    )
+}

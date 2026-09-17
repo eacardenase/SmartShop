@@ -33,7 +33,7 @@ extension AppScreen {
         switch self {
         case .home:
             NavigationStack {
-                Text("Home").navigationTitle("Home")
+                ProductListScreen().navigationTitle("Products")
             }
         case .products:
             NavigationStack {
