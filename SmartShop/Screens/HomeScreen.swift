@@ -33,12 +33,11 @@ extension AppScreen {
         switch self {
         case .home:
             NavigationStack {
-                ProductListScreen().navigationTitle("Products")
+                ProductListScreen()
             }
         case .products:
             NavigationStack {
-                Text("Products")
-                    .navigationTitle("Products")
+                MyProductListScreen()
                     .requiresAuthentication()
             }
         case .cart:
