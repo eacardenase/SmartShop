@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum ProductsError: Error {
+    case message(String?)
+}
+
 enum ProductSaveError: Error {
     case missingUserId
     case invalidPrice

@@ -21,10 +21,16 @@ class ProductStore {
     func loadAllProducts() async throws {
         let resource = Resourse(
             url: Constants.Urls.products,
-            modelType: [Product].self
+            modelType: ProductsResponse.self
         )
 
-        products = try await httpClient.load(resource)
+        let response = try await httpClient.load(resource)
+
+        guard response.success, let allProducts = response.products else {
+            throw ProductsError.message(response.message)
+        }
+
+        self.products = allProducts
     }
 
     func saveProduct(_ product: Product) async throws {

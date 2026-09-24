@@ -62,3 +62,9 @@ struct CreateProductResponse: Codable {
     let message: String?
     let product: Product
 }
+
+struct ProductsResponse: Codable {
+    let success: Bool
+    let message: String?
+    let products: [Product]?
+}
