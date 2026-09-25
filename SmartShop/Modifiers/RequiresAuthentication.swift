@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RequiresAuthentication: ViewModifier {
     @State private var isLoading = true
-    @AppStorage("userId") var userId: String?
+    @AppStorage("userId") var userId: Int?
 
     func body(content: Content) -> some View {
         Group {

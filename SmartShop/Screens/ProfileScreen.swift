@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    @AppStorage("userId") private var userId: String?
+    @AppStorage("userId") private var userId: Int?
 
     var body: some View {
         Button("Sign out") {
